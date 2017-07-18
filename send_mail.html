@@ -11,56 +11,102 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
+<!--    
+<style>
+    $('#text_count').keyup(updateCount);
+    $('#text_count').keydown(updateCount);
+
+    function updateCount()
+    {
+        var cs = 124 - ($(this).val().length);
+        $('#characters').text(cs);
+    }
+</style>
+-->
+    
     
 <style>
+    h5
+    {
+        margin-left: 20px;
+    }
+    
+    h2
+    {
+        margin-left: 20px;
+    }
+    
+    h4
+    {
+        margin-left: 20px;
+    }
+    
+    
     textarea
     {
+        margin-left: 20px;
         width: 600px;
         height: 200px;
     }
     
-    
     .button
     {
-        background-color: gray;
-        color: white;
-    }
-    
-    .back
-    {
-        float: left
-    }
-    
-    .next
-    {
-        float: right;
+        color: black;
+        background-color: lightgray;
     }
 </style>    
 
 
     
 <body>
-    <h2>Recruit</h2>
+    <div class="row">
+        
+    <div class="col-md-1"></div>
 
-    <h4>Search for potential participants to send flyers about studies.</h4>
+    <div class="col-md-10">
     
+        <h2>Recruit</h2>
+
+        <h4>Search for potential participants to send flyers about studies.</h4>
+
+        <br>
+
+        <input type="file" accept="media_type" style="margin-left: 20px;">
+
+        <br>
+
+        <h5>E-mail Body</h5>
+        <textarea name="email"></textarea>
+
+        <br>
+
+        <h5>Text Message (124 character max)</h5>
+        <textarea name="message" maxlength="124"></textarea>
+        <!--<div id="characters"><div>-->
+
+        <br>    
+        <br>
+        
+        <div class="row">
+            <div class="col-md-1">
+                <button class="btn btn-default button" style="margin-left: 20px;">BACK</button>
+            </div>
+            
+            <div class="col-md-10"></div>
+            
+            <div class="col-md-1">
+                <button class="btn btn-default button">NEXT</button>
+            </div>
+
+        </div>
     
-    <input type="file" accept="media_type">
+    </div>
     
-    <h5>E-mail Body</h5>
-    <textarea name="email"></textarea>
+    <div class="col-md-1"></div>
+        
+    </div>
     
-    <h5>Text Message</h5>
-    <textarea name="message"></textarea>
-    
-    <br>    
     <br>
-    
-
-    <button class="button back">BACK</button>
-    
-    <button class="button next">NEXT</button>
-    
     
 </body>
 
