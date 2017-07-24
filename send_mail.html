@@ -2,7 +2,24 @@
     
 <head>
     <title>Recruit - Send Text</title>
-    <!-- Latest compiled and minified CSS -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            var text_max = 124;
+            $('#characters').html(text_max + ' characters remaining');
+
+            $('#message').keyup(function() {
+                var text_length = $('#message').val().length;
+                var text_remaining = text_max - text_length;
+
+                $('#characters').html(text_remaining + ' characters remaining');
+            });
+        });
+    </script>
+    
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- Optional theme -->
@@ -10,21 +27,10 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
 </head>
-<!--    
-<style>
-    $('#text_count').keyup(updateCount);
-    $('#text_count').keydown(updateCount);
+ 
 
-    function updateCount()
-    {
-        var cs = 124 - ($(this).val().length);
-        $('#characters').text(cs);
-    }
-</style>
--->
-    
-    
 <style>
     h5
     {
@@ -45,8 +51,20 @@
     textarea
     {
         margin-left: 20px;
-        width: 600px;
-        height: 200px;
+        width: 98%;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+    }
+    
+    .email
+    {
+        height: 35%;
+    }
+    
+    .message
+    {
+        height: 10%;
     }
     
     .button
@@ -56,9 +74,8 @@
     }
 </style>    
 
-
     
-<body>
+<body>  
     <div class="row">
         
     <div class="col-md-1"></div>
@@ -76,13 +93,16 @@
         <br>
 
         <h5>E-mail Body</h5>
-        <textarea name="email"></textarea>
+        <textarea name="email" class="email"></textarea>
 
         <br>
 
-        <h5>Text Message (124 character max)</h5>
-        <textarea name="message" maxlength="124"></textarea>
-        <!--<div id="characters"><div>-->
+        <h5>Text Message</h5>
+        <textarea name="message" id="message" class="message" maxlength="124"></textarea>
+        
+        <br>
+        
+        <div style="margin-left:20px;" id="characters"></div>
 
         <br>    
         <br>
@@ -108,6 +128,6 @@
     
     <br>
     
-</body>
+</body> 
 
 </html>
