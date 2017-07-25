@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <style>
+            *{
+                font-size:8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class= "container fluid">
+            <h2>Register</h2>
+            <p style="font-size: 12px;">Fill in the data to register new participants.</p><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="usr">FIRST NAME</label>
+                            <input type="text" class="form-control" id="firstname" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="usr">LAST NAME</label>
+                            <input type="text" class="form-control" id="lastname" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="usr">EMAIL ADDRESS</label>
+                            <input type="text" class="form-control" id="email" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="usr">PHONE NUMBER</label>
+                            <input type="text" class="form-control" id="cell" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="usr">ADDRESS</label>
+                            <input type="text" class="form-control" id="address1">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="usr">CITY</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="usr">STATE</label>
+                            <input type="text" class="form-control" id="state">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="usr">ZIP</label>
+                            <input type="text" class="form-control" id="zip">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="pwd">GENDER</label>
+                            <select class="form-control" id="gender" required>
+                                <option selected disabled></option>
+                                <option value="gender1">Male</option>
+                                <option value="gender2">Female</option>
+                                <option value="gender3">Others</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="pwd">DIAGNOSED</label>
+                            <select class="form-control" id="gender" required>
+                                <option selected disabled></option>
+                                <option value="diagnosed1">YES</option>
+                                <option value="diagnosed2">NO</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="usr">DATE OF BIRTH</label>
+                            <input type="date" class="form-control" id="dob" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><button class="btn btn-primary target" type="submit">SAVE</button>
+        </div>
+    </body>
+</html>
+   
+        
