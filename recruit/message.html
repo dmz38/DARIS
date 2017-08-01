@@ -1,0 +1,133 @@
+<html>
+    
+<head>
+    <title>Recruit - Send Text</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            var text_max = 124;
+            $('#characters').html(text_max + ' characters remaining');
+
+            $('#message').keyup(function() {
+                var text_length = $('#message').val().length;
+                var text_remaining = text_max - text_length;
+
+                $('#characters').html(text_remaining + ' characters remaining');
+            });
+        });
+    </script>
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+</head>
+ 
+
+<style>
+    h5
+    {
+        margin-left: 20px;
+    }
+    
+    h2
+    {
+        margin-left: 20px;
+    }
+    
+    h4
+    {
+        margin-left: 20px;
+    }
+    
+    
+    textarea
+    {
+        margin-left: 20px;
+        width: 98%;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+    }
+    
+    .email
+    {
+        height: 35%;
+    }
+    
+    .message
+    {
+        height: 10%;
+    }
+    
+    .button
+    {
+        color: black;
+        background-color: lightgray;
+    }
+</style>    
+
+    
+<body>  
+    <div class="row">
+        
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10">
+    
+        <h2>Recruit</h2>
+
+        <h4>Search for potential participants to send flyers about studies.</h4>
+
+        <br>
+
+        <input type="file" accept="media_type" style="margin-left: 20px;">
+
+        <br>
+
+        <h5>E-mail Body</h5>
+        <textarea name="email" class="email"></textarea>
+
+        <br>
+
+        <h5>Text Message</h5>
+        <textarea name="message" id="message" class="message" maxlength="124"></textarea>
+        
+        <br>
+        
+        <div style="margin-left:20px;" id="characters"></div>
+
+        <br>    
+        <br>
+        
+        <div class="row">
+            <div class="pull-left">
+                <button class="btn btn-default button" style="margin-left: 35px;">BACK</button>
+            </div>
+            
+            
+            <div class="pull-right">
+                <button class="btn btn-default button" style="margin-right: 15px;">NEXT</button>
+            </div>
+
+        </div>
+    
+    </div>
+    
+    <div class="col-md-1"></div>
+        
+    </div>
+    
+    <br>
+    
+</body> 
+
+</html>
+
