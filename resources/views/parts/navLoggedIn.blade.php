@@ -1,5 +1,5 @@
 <div id="header"  style="background-color: #07294D">
-    <div class="row vertical-align">
+    <div class="vertical-align">
         <div class="col-xs-5 col-sm-3 text-center">
             <img class="img-responsive" src="/img/ajlogo-clear.svg">
         </div>
