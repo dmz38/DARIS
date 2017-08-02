@@ -1,23 +1,18 @@
-<div class="col-sm-1"></div>
-<div class="col-sm-10">
-    <div class="row">
+<div class="col-xs-1">&nbsp;</div>
+<div class="col-xs-10">
+    <div>
         <div class="text-center">
             <h6>STEP 1</h6>
-            <p> Check all that apply: </p>
-            <br>
+            Check all that apply:<br>
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-sm-12 col-md-8">
-            <form class="text-center">
-                <p><input type="checkbox" id= "checkbox1"> I would like to suggest someone to participate in future studies</p>
-                <p><input type="checkbox" id="checkbox2"> I would like to learn more about the AJ Drexel Autism Institute</p>
-            </form>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="text-center">
         <br>
-        <button class="btn btn-primary target" type="submit">NEXT</button>
+        <form class="text-center">
+            <input type="checkbox" id="suggestCheck"> I would like to suggest someone to participate in future studies<br><br>
+            <input type="checkbox" id="learnCheck"> I would like to learn more about the AJ Drexel Autism Institute
+        </form>
     </div>
 </div>
-<div class="col-sm-1"></div>
+<div class="col-xs-1">&nbsp;</div>
+<div class="col-xs-12 text-center">
+    <button id="part1Submit" class="btn btn-primary target" type="submit">NEXT</button>
+</div>
