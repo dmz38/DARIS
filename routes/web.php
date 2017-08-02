@@ -22,3 +22,7 @@ Route::get('home', function () {
 Route::get('register', function () {
     return view('register');
 });
+
+Route::get('recruit', function () {
+    return view('recruit');
+});
