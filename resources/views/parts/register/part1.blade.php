@@ -14,5 +14,5 @@
 </div>
 <div class="col-xs-1">&nbsp;</div>
 <div class="col-xs-12 text-center">
-    <button id="part1Submit" class="btn btn-primary target" type="submit">NEXT</button>
+    <button id="part1Next" class="btn btn-primary target" type="submit">NEXT</button>
 </div>

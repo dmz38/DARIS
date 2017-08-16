@@ -11,7 +11,7 @@
     </div>
     <br>
     <div>
-        <button id="part2Prev" class="btn btn-primary target pull-left" type="submit">BACK</button>
+        <button id="part2Prev" class="btn btn-primary target pull-left prev" type="submit">BACK</button>
         <button id="part2Next" class="btn btn-primary target pull-right" type="submit">NEXT</button>
     </div>
 </div>

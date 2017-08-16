@@ -1,12 +1,15 @@
 <div id="header"  style="background-color: #07294D">
     <div class="vertical-align">
-        <div class="col-xs-5 col-sm-3 text-center">
-            <img class="img-responsive" src="/img/ajlogo-clear.svg">
+        <div class="visible-xs col-xs-3">
+            <img id="MarioLogo" class="img-responsive pull-left" src="/img/mario.svg" onclick="window.location='/home'">
         </div>
-        <div class="visible-xs col-xs-4 text-center">
+        <div class="col-sm-3 text-center">
+            <img id="AJDrexelLogo" class="img-responsive" src="/img/ajlogo-clear.svg" onclick="window.location='/home'">
+        </div>
+        <div class="visible-xs col-xs-6 text-center">
             <h2>DARIS</h2>
         </div>
-        <div class="hidden-xs col-sm-7 text-center">
+        <div class="hidden-xs col-sm-8 text-center">
             <h3><b>D</b>rexel <b>A</b>utism <b>R</b>esearch <b>I</b>nformation <b>S</b>ystem</h3>
         </div>
         <div class="visible-xs col-xs-3 text-center">

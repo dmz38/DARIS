@@ -24,6 +24,18 @@
             margin: 0;
         }
 
+        h1 {
+            font-size: 4vh;
+        }
+
+        h3 {
+            font-size: 3.5vh;
+        }
+
+        h3 {
+            font-size: 2.5vh;
+        }
+
         #header{
             color: white;
         }
@@ -86,6 +98,38 @@
             align-items: center;     /* Align the flex-items vertically */
             justify-content: center; /* Optional, to align inner flex-items
                               horizontally within the column  */
+        }
+
+        .row.row-eq-height {
+            overflow: hidden
+        }
+
+        .row.row-eq-height [class*="col-"]{
+            margin-bottom: -99999px;
+            padding-bottom: 99999px;
+        }
+
+        .menuOption {
+            margin-bottom: 5em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        textarea
+        {
+            margin-left: 20px;
+            width: 98%;
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+            box-sizing: border-box;         /* Opera/IE 8+ */
+        }
+
+        #AJDrexelLogo{
+            max-height: 16vh;
+        }
+
+        #MarioLogo{
+            max-height: 16vh;
         }
     </style>
 </head>

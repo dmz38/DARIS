@@ -26,3 +26,15 @@ Route::get('register', function () {
 Route::get('recruit', function () {
     return view('recruit');
 });
+
+Route::get('recruit/search', function () {
+    return view('recruit.search');
+});
+
+Route::get('recruit/message', function () {
+    return view('recruit.message');
+});
+
+Route::get('recruit/summary', function () {
+    return view('recruit.summary');
+});
