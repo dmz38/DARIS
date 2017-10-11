@@ -125,7 +125,7 @@
         }
 
         #AJDrexelLogo{
-            max-height: 16vh;
+            max-height: 13vh;
         }
 
         #MarioLogo{

@@ -10,7 +10,7 @@
             <h2>DARIS</h2>
         </div>
         <div class="hidden-xs col-sm-8 text-center">
-            <h3><b>D</b>rexel <b>A</b>utism <b>R</b>esearch <b>I</b>nformation <b>S</b>ystem</h3>
+            <h2><b>D</b>rexel <b>A</b>utism <b>R</b>esearch <b>I</b>nformation <b>S</b>ystem</h2>
         </div>
         <div class="visible-xs col-xs-3 text-center">
             <i class="fa fa-gear fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>

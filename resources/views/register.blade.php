@@ -13,6 +13,11 @@
                 @include("parts.register.part2")
             </div>
             <div class="clearfix"></div>
+
+            <div id="consentPart" class="surveySection">
+                @include("parts.register.consent")
+            </div>
+
             <div id="part3" class="surveySection">
                 @include("parts.register.part3")
             </div>
@@ -31,46 +36,103 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
+            <div id="nominate">
+                @include("parts.register.nominate")
+            </div>
             <div id="submit">
                 @include("parts.register.submit")
             </div>
         </div>
     </div>
+    <template id="childTemplate">
+        @include("parts.register.form.childTemplate")
+    </template>
 </div>
 </body>
 <script>
+    //$(function () {
+    //  $('[data-toggle="tooltip"]').tooltip()
+    //});
+
+    var childCount = 1;
+
     // hide all parts that shouldn't be seen
     $("#surveyWrap").children().not("#part1").hide();
 
     // next logic
     $("#part1Next").on("click", function () {
-        $show = $("#part2");
-        if (!$("#suggestCheck").is(":checked") && $("#learnCheck").is(":checked")) {
-            $show = $("#registerMailingList");
-        }
-        $("#part1").hide();
-        $show.fadeIn();
+        checked = $("input[type=checkbox]:checked").length;
+        if (!checked) {
+            alert("You must check at least one checkbox.");}
+        else {
+            $show = $("#part2");
+            if (!$("#suggestCheck").is(":checked") && $("#learnCheck").is(":checked")) {
+                $show = $("#registerMailingList");
+            }
+            $("#part1").hide();
+            $show.fadeIn();
+        };
     });
+
+    var selfID;
+
+    $("#rSelf").on("click", function () {
+        $(".guardianText").hide();
+        $(".selfText").show();
+        selfID = 1;
+    });
+
+    $("#rGuardian").on("click", function () {
+        $(".guardianText").show();
+        $(".selfText").hide();
+        selfID = 0;
+    });
+
+
+    var q01 = $('input[name=Nomination]');
+
+    // <!-- script added by Saugat for button -->
+    validate();
+    $("input[type='radio']").change(validate);
+    function validate() {
+        if ($(q01).is(':checked') ) {
+            $(".btn#part2Next").removeAttr("disabled", false);
+        } else {
+            $(".btn#part2Next").attr("disabled", true);
+        }
+    }
+    // <!-- end of added script -->
 
     $("#part2Next").on("click", function () {
         $("#part2").hide();
         if ($("#rElse").is(":checked")) {
             $("#nominate").fadeIn();
         } else {
-            if ($("#rSelf")) {
-                $(".guardianText").hide();
-                $(".selfText").show();
-            } else {
-                $(".guardianText").show();
-                $(".selfText").hide();
-            }
-            $("#part3").show();
+            $("#consentPart").show();
+            $("#suspected").hide();
+            //added hidden other diagnosis text box to start of part 3
+            $("#otherDiag").hide();
+        }
+    });
+
+    $("#consentNext").on("click", function(){
+        $("#consentPart").hide();
+        if (selfID==1) {
+            $("#part3").fadeIn();
+        } else {
+            $("#part4").fadeIn();
+            $("#otherGenderChild").hide();
+            $("#otherGenderYou").hide();
+            // $("#childOtherInfo").append($("#pastReview").html() + $("#dataPermission").html() );
+            // $("#guardianInfo").append("<br>" + $("#pastReview").html() );
         }
     });
 
     $("#part3Next").on("click", function () {
         $("#part3").hide();
         $("#part4").fadeIn();
+        $("#otherGenderChild").hide();
+        $("#otherGenderYou").hide();
     });
 
     $("#part4Next").on("click", function () {
@@ -93,21 +155,81 @@
         $("#submit").fadeIn();
     });
 
+    $("#nominateNext").on("click", function () {
+        $("#nominate").hide();
+        $("#submit").fadeIn();
+    });
+
     // all back logic
 
+    $('#no1, #yes1').click(function () {
+        if ($('#no1').is(':checked')) {
+            $("#suspected").show();
+        }
+        else {
+            $("#suspected").hide();
+        };
+    });
+
+    //added the fade in/out of the other diagnosis text box
+    $("#options").on("change", function () {
+        if ($("#options").val() == "diag_oth") {
+            $("#otherDiag").fadeIn();
+        }
+        if ($("#options").val() != "diag_oth") {
+            $("#otherDiag").hide();
+        }
+    });
+
+    $('.addMoreDiag').on("click", function () {
+        $("#afterDiagnosis").append($("#options").html() + "<br>");
+    });
+
+    $('.addMoreDiagnosis').on("click", function () {
+        $("#afterOtherDiagnosis").append('<div class="col-md-12" style="margin-left:0px;">'+ $("#otherDiagnosisGuardian").html() + "</div><br>");
+    });
+
+    $('#genderYou').on("change", function () {
+        if ($("#genderYou").val() == "gender3") {
+            $("#otherGenderYou").fadeIn();
+        }
+        if ($("#genderYou").val() != "gender3") {
+            $("#otherGenderYou").hide();
+        }
+    });
+
+    $('#genderChild').on("change", function () {
+        if ($("#genderChild").val() == "gender3") {
+            $("#otherGenderChild").fadeIn();
+        }
+        if ($("#genderChild").val() != "gender3") {
+            $("#otherGenderChild").hide();
+        }
+    });
+
+    $("body").on("click", ".addMore", function () {
+        childCount++;
+        $("#childData").append($("#childTemplate").html());
+    });
+
     $(".prev").on("click", function () {
-        console.log("CLICKED:" + $(this).prop("id"));
+        //console.log("CLICKED:" + $(this).prop("id"));
         $thisSection = $(this).closest(".surveySection");
-        console.log($thisSection.prop("id"));
+        //console.log($thisSection.prop("id"));
         $prevSection = $thisSection.prevAll(".surveySection:first");
-        console.log($prevSection.prop("id"));
+        //console.log($prevSection.prop("id"));
         $thisSection.hide();
         $prevSection.show();
     });
 
     $("#mailPrev").on("click", function () {
-        $(this).closest(".surveySection").hide();
+        $("#mailingList").hide();
         $("#part1").show();
+    });
+
+    $("#nominatePrev").on("click", function () {
+        $("#nominate").hide();
+        $("#part2").show();
     });
 
 

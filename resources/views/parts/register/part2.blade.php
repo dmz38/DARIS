@@ -3,11 +3,14 @@
     <div class="text-center">
         Step 2
         <br><br>
-        Who do you want to nominate or register?<br/><br>
-        <label><input id="rSelf" type="radio" name="Nomination"> Myself </label> <i class="fa fa-info-circle"></i><br/>
-        <label><input id="rGuardian" type="radio" name="Nomination"> My Child </label> <i class="fa fa-info-circle"></i><br/>
-        <label><input id="rElse" type="radio" name="Nomination"> Someone else </label> <i class="fa fa-info-circle"></i><br/>
-
+        Please indicate who may be eligible for a study<br/><br>
+        <label><input id="rSelf" type="radio" name="Nomination"> Myself </label> <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="If you're over the age of 18 and legally able to register yourself for a research study"></i><br/>
+        <label><input id="rGuardian" type="radio" name="Nomination"> My Family </label> <i
+                class="fa fa-info-circle" data-toggle="tooltip" data-placement="right"
+                title="If you're a parent or guardian of a child under the age of 18"></i><br/>
+        <label><input id="rElse" type="radio" name="Nomination"> Professional </label> <i
+                class="fa fa-info-circle" data-toggle="tooltip" data-placement="right"
+                title="If you are a medical professional who wishes to recommend a patient of yours as a good fit for future studies."></i><br/>
     </div>
     <br>
     <div>
