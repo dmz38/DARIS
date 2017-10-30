@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuardianTable extends Migration
+class CreateFamilyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateGuardianTable extends Migration
      */
     public function up()
     {
-        Schema::create('Guardian', function (Blueprint $table) {
-            $table->increments('participantId');
-            $table->string('fName');
-            $table->string('lName');
-            $table->integer('familyId');
-            $table->integer('contactId');
+        Schema::create('Family', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('familyName');
         });
     }
 
@@ -29,6 +26,6 @@ class CreateGuardianTable extends Migration
      */
     public function down()
     {
-        Schema::drop('Guardian');
+        Schema::drop('Family');
     }
 }

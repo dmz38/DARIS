@@ -11,8 +11,8 @@
         </div>
         <br>
         <div>
-            <button id="consentBack" class="pull-left btn btn-primary target prev">BACK</button>
-            <button id="consentNext" class="pull-right btn btn-primary target">NEXT</button>
+            <button id="consentBack" class="pull-left btn btn-primary target prev" type="button">BACK</button>
+            <button id="consentNext" class="pull-right btn btn-primary target" type="button">NEXT</button>
         </div>
     </div>
 </div>

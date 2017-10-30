@@ -8,7 +8,7 @@
     <br><br>
 
     <div class="row">
-        <button id="nominatePrev" class="btn btn-primary target pull-left" type="submit">BACK</button>
-        <button id="nominateNext" class="btn btn-primary target pull-right" type="submit">NEXT</button>
+        <button id="nominatePrev" class="btn btn-primary target pull-left" type="button">BACK</button>
+        <button id="nominateNext" class="btn btn-primary target pull-right" type="button">NEXT</button>
     </div>
 </div>

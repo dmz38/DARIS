@@ -2,10 +2,12 @@
 @include("parts.head")
 <body>
 @include("parts.nav")
+<form id="registerForm">
 <div class="container-fluid">
     <div class="col-xs-12 col-lg-push-1 col-lg-10">
         <h2>Register</h2>
         <div id="surveyWrap">
+            <input type="hidden" name="_token" value="{{ Session::token() }}">
             <div id="part1" class="surveySection">
                 @include("parts.register.part1")
             </div>
@@ -48,6 +50,7 @@
         @include("parts.register.form.childTemplate")
     </template>
 </div>
+</form>
 </body>
 <script>
     //$(function () {
@@ -58,6 +61,7 @@
 
     // hide all parts that shouldn't be seen
     $("#surveyWrap").children().not("#part1").hide();
+    $("#otherDiagInput, .otherGender").hide();
 
     // next logic
     $("#part1Next").on("click", function () {
@@ -74,7 +78,7 @@
         };
     });
 
-    var selfID;
+    var selfID = 0;
 
     $("#rSelf").on("click", function () {
         $(".guardianText").hide();
@@ -117,7 +121,7 @@
 
     $("#consentNext").on("click", function(){
         $("#consentPart").hide();
-        if (selfID==1) {
+        if (selfID == 1) {
             $("#part3").fadeIn();
         } else {
             $("#part4").fadeIn();
@@ -141,6 +145,16 @@
     });
 
     $("#part5Next").on("click", function () {
+        $("#mailingList, #nominate").html("");
+        //console.log($("#registerForm").serializeArray());
+        //var formData = objectifyForm($("#registerForm").serializeArray());
+
+        $.post("/ajax/register", $("#registerForm").serializeArray(), function(data){
+            console.log(data);
+        }, "json");
+
+        //console.log(formData);
+
         $("#part5").hide();
         $("#part6").fadeIn();
     });
@@ -198,12 +212,19 @@
         }
     });
 
-    $('#genderChild').on("change", function () {
-        if ($("#genderChild").val() == "gender3") {
-            $("#otherGenderChild").fadeIn();
+    $("#singleDiagnosis").on("change", function(){
+        if ($(this).val() == "diag_oth") {
+            $("#otherDiagInput").fadeIn();
+        } else {
+            $("#otherDiagInput").fadeOut();
         }
-        if ($("#genderChild").val() != "gender3") {
-            $("#otherGenderChild").hide();
+    });
+
+    $('body').on("change", ".gender",  function () {
+        if ((this).val() == "other") {
+            $(this).closest(".otherGender").fadeIn();
+        } else {
+            $(this).closest(".otherGender").hide();
         }
     });
 
@@ -241,5 +262,14 @@
     $("#prevNo").on("click", function () {
         $("#shareInfo").fadeOut();
     });
+
+    function objectifyForm(formArray) {//serialize data function
+
+        var returnArray = {};
+        for (var i = 0; i < formArray.length; i++){
+            returnArray[formArray[i]['name']] = formArray[i]['value'];
+        }
+        return returnArray;
+    }
 </script>
 </html>

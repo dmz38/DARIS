@@ -2,7 +2,7 @@
     <div class="text-center">
         <h4>Your data was successfully submitted. Thank you for registering!</h4>
         <br>
-        <button onclick="window.location='/register'" class="btn btn-primary target" type="submit">
+        <button onclick="window.location='/register'" class="btn btn-primary target" type="button">
             FINISH
         </button>
     </div>

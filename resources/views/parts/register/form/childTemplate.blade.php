@@ -1,5 +1,5 @@
-<div class="childInfo">
-    <div class="guardianText">
+<div class="childInfo guardianText">
+    <div>
         <h3><b>Child</b></h3>
         <div class="childInfo">
             <b>
@@ -34,10 +34,10 @@
                 <h5>My Child is diagnosed with ASD
                     <span class="pull-right">
                                     <label class="radio-inline" for="daignosedASDY">
-                                        <input type="radio" name="diagnosedASD" class="daignosedASDY" value="yes"> Yes
+                                        <input type="radio" name="diagnosedASD" class="daignosedASDY" value="1"> Yes
                                     </label>
                                     <label class="radio-inline" for="daignosedASDN">
-                                        <input type="radio" name="diagnosedASD" class="daignosedASDN" value="no"> No
+                                        <input type="radio" name="diagnosedASD" class="daignosedASDN" value="0"> No
                                     </label>
                                 </span>
                 </h5>
@@ -46,10 +46,10 @@
                 <h5>I think my child might have ASD
                     <span class="pull-right">
                                     <label class="radio-inline" for="suspectedASDY">
-                                        <input type="radio" name="suspectedASD" class="suspectedASDY" value="yes"> Yes
+                                        <input type="radio" name="suspectedASD" class="suspectedASDY" value="1"> Yes
                                     </label>
                                     <label class="radio-inline" for="suspectedASDN">
-                                        <input type="radio" name="suspectedASD" class="suspectedASDN" value="no"> No
+                                        <input type="radio" name="suspectedASD" class="suspectedASDN" value="0"> No
                                     </label>
                                 </span>
                 </h5>
@@ -77,9 +77,9 @@
                     To the best of your knowledge, has your child ever participated in an AJ Drexel Autism Institute study before?
                     <span class="pull-right">
                                     <label><input class="prevStudyYes" type="radio" name="previous"
-                                                  value="yes"> Yes </label>
+                                                  value="1"> Yes </label>
                                     <label><input class="prevStudyNo" type="radio" name="previous"
-                                                  value="no"> No </label>
+                                                  value="0"> No </label>
                                     <br/>
                                 </span>
                 </h5>
@@ -89,8 +89,8 @@
                     Do you allow the AJ Drexel Autism Institute to review the data from previous studies of this person
                     as part of the research process?
                     <span class="pull-right">
-                                    <label><input class="prevInfoYes" type="radio" name="info" value="yes"> Yes </label>
-                                    <label><input class="prevInfoNo" type="radio" name="info" value="no"> No </label>
+                                    <label><input class="prevInfoYes" type="radio" name="info" value="1"> Yes </label>
+                                    <label><input class="prevInfoNo" type="radio" name="info" value="0"> No </label>
                                     <br/>
                                 </span>
                 </h5>

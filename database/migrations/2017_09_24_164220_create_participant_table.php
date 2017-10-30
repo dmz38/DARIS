@@ -17,11 +17,15 @@ class CreateParticipantTable extends Migration
             $table->increments('participantId');
             $table->string('fName');
             $table->string('lName');
-            $table->boolean('diagnosedASD');
+            $table->boolean('diagnosed');
             $table->date('dob');
+            $table->string('gender');
+            $table->string('race');
+            $table->string('ethnicity');
+            $table->string('diagnosis')->nullable($value = true);
             $table->boolean('newRegister');
-            $table->boolean('permToShare');
-            $table->integer('familyId');
+            $table->boolean('permToShare')->default(false);
+            $table->integer('familyId')->nullable($value = true);
             $table->integer('contactId');
             $table->timestamp('registered');
         });

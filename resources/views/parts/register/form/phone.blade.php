@@ -1,18 +1,18 @@
 <div class="row">
     <div class="col-md-3">
         <label for="cell">Phone #</label>
-        <input type="text" class="form-control" id="cell" required>
+        <input type="text" class="form-control" id="cell" name="phoneNumber" required>
     </div>
     <div class="visible-xs">
         <br>
     </div>
     <div class="col-md-4">
         <label for="phoneType">Type</label>
-        <select class="form-control" id="phoneType">
+        <select class="form-control" name="phoneType" id="phoneType">
             <option>Select One</option>
-            <option>Cell Phone</option>
-            <option>Land Line</option>
-            <option>Other</option>
+            <option value="cell">Cell Phone</option>
+            <option value="land">Land Line</option>
+            <option value="other">Other</option>
         </select>
     </div>
     <div class="visible-xs">
@@ -20,18 +20,18 @@
     </div>
     <div class="col-md-4">
         <label for="carrier">Provider</label>
-        <select class="form-control" id="carrier">
+        <select class="form-control" name="carrier" id="carrier">
             <option>Select One</option>
-            <option>AT&T</option>
-            <option>Boost Mobile</option>
-            <option>Consumer Cellular</option>
-            <option>MetroPCS</option>
-            <option>Project Fi</option>
-            <option>Sprint</option>
-            <option>T-Mobile</option>
-            <option>US Cellular</option>
-            <option>Verizon Wireless</option>
-            <option>Virgin Mobile</option>
+            <option value="att">AT&T</option>
+            <option value="boost">Boost Mobile</option>
+            <option value="consumer">Consumer Cellular</option>
+            <option value="metropcs">MetroPCS</option>
+            <option value="fi">Project Fi</option>
+            <option value="sprint">Sprint</option>
+            <option value="tmo">T-Mobile</option>
+            <option value="usc">US Cellular</option>
+            <option value="vzw">Verizon Wireless</option>
+            <option value="virgin">Virgin Mobile</option>
         </select>
     </div>
     <div class="col-md-1"></div>
@@ -44,10 +44,10 @@
             Can we text you more information?
             <span class="pull-right">
                 <label class="radio-inline" for="yestext">
-                    <input type="radio" name="moreText" id="yestext" value="yes">Yes
+                    <input type="radio" name="textPermission" id="yestext" value="1">Yes
                 </label>
 				<label class="radio-inline" for="notext">
-				    <input type="radio" name="moreText" id="notext" value="no">No
+				    <input type="radio" name="textPermission" id="notext" value="0">No
                 </label>
             </span>
         </h5>
@@ -57,10 +57,10 @@
             Can we leave you a voicemail?
             <span class="pull-right">
 			    <label class="radio-inline" for="yesvoice">
-				    <input type="radio" name="voicemail" id="yesvoice" value="yes">Yes
+				    <input type="radio" name="voicemailPermission" id="yesvoice" value="1">Yes
                 </label>
 				<label class="radio-inline" for="novoice">
-				    <input type="radio" name="voicemail" id="novoice" value="no">No
+				    <input type="radio" name="voicemailPermission" id="novoice" value="0">No
                 </label>
             </span>
         </h5>
@@ -70,10 +70,10 @@
             Is this your preferred method of contact?
             <span class="pull-right">
                 <label class="radio-inline" for="yescontact">
-                    <input type="radio" name="preferPhone" id="yescontact" value="yes">Yes
+                    <input type="radio" name="phonePref" id="yescontact" value="1">Yes
                 </label>
                 <label class="radio-inline" for="nocontact">
-                    <input type="radio" name="preferPhone" id="nocontact" value="no">No
+                    <input type="radio" name="phonePref" id="nocontact" value="0">No
                 </label>
             </span>
         </h5>

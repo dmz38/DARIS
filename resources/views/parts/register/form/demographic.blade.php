@@ -1,33 +1,33 @@
 <div class="row">
     <div class="col-md-3">
         <label for="usr">Date of Birth</label>
-        <input type="date" class="form-control dob" required>
+        <input type="date" class="form-control" name="dob" required>
     </div>
     <div class="visible-xs">
         <br>
     </div>
     <div class="col-md-3">
         <label for="pwd">Gender</label>
-        <select class="form-control gender" required>
+        <select class="form-control gender" name="gender" required>
             <option selected disabled>Select a Gender</option>
-            <option value="gender1">Male</option>
-            <option value="gender2">Female</option>
-            <option value="gender3">Other</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
         </select>
     </div>
     <div class="visible-xs">
         <br>
     </div>
-    <div class="col-md-3 otherGenderChild">
+    <div class="col-md-3 otherGender">
         <label for="gen">Other Gender</label>
-        <input type="text" class="form-control" name="otherGenderChild" placeholder="Other Gender">
+        <input type="text" class="form-control" name="otherGender" placeholder="Other Gender">
     </div>
     <div class="visible-xs">
         <br>
     </div>
     <div class="col-md-3">
         <label for="usr">Race</label>
-        <select class="form-control race" required>
+        <select class="form-control" name="race" required>
             <option selected disabled>Select a Race</option>
             <option value="race1">American Indian/Alaska Native</option>
             <option value="race2">Asian</option>
@@ -43,7 +43,7 @@
     </div>
     <div class="col-md-3">
         <label for="eth">Ethnicity</label>
-        <select class="form-control ethnicity" required>
+        <select class="form-control" name="ethnicity" required>
             <option selected disabled>Select a Ethnicity</option>
             <option value="ethnic1">HIspanic or Latino</option>
             <option value="ethnic2">Not HIspanic or Latino</option>

@@ -113,10 +113,10 @@
                             Diagnosed with ASD
                             <span class="pull-right">
 										<label class="radio-inline" for="yesASD">
-											<input type="radio" name="asd" id="yesASD" value="yes">Yes
+											<input type="radio" name="asd" id="yesASD" value="1">Yes
 										</label>
 										<label class="radio-inline" for="noASD">
-											<input type="radio" name="asd" id="noASD" value="No">No
+											<input type="radio" name="asd" id="noASD" value="0">No
 										</label>
 									</span>
                         </h5>
@@ -147,7 +147,7 @@
                             </div>
                             <div class="checkbox">
                                 <label for="emailCon" class="pull-left"><span>Email</span></label>
-                                <p class="pull-right"><input type="checkbox" id="emailCon" name="emai"/></p>
+                                <p class="pull-right"><input type="checkbox" id="emailCon" name="email"/></p>
                             </div>
                         </div>
                     </div>
