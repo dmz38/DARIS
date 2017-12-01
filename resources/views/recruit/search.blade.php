@@ -54,15 +54,15 @@
                     <div>
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">
-                                <label for="zipcode"><h5>Zip Code</h5></label>
-                                <input type="text" id="zipcode" maxlength="5" class="form-control" value="19104">
+                                <label><h5>Zip Code</h5>
+                                <input type="text" id="zipcode" maxlength="5" class="form-control" value="19104"></label>
                             </div>
                         </div>
                         <div class="col-md-2"></div>
                         <div class="col-md-5 col-xs-12">
                             <div class="form-group">
-                                <label for="radius"><h5>Radius (Mi)</h5></label>
-                                <input type="number" id="radius" maxlength="3" class="form-control">
+                                <label><h5>Radius (Mi)</h5>
+                                <input type="number" id="radius" maxlength="3" class="form-control"></label>
                             </div>
                         </div>
                     </div>
@@ -80,8 +80,8 @@
                         <h5 style="margin-top: 30px">Ethnicity</h5>
                         <div class="everything-checkbox">
                             <div class="checkbox">
-                                <label for="blackEth" class="pull-left">Black or African American</label>
-                                <p class="pull-right"><input type="checkbox" id="blackEth" name="black"/></p>
+                                <label class="pull-left">Black or African American
+                                <p class="pull-right"><input type="checkbox" id="blackEth" name="black"/></p></label>
                             </div>
                             <div class="checkbox">
                                 <label for="hispanicEth" class="pull-left"><span>Hispanic</span></label>

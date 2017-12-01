@@ -17,8 +17,8 @@
         <div class="row">
             <div class="row">
                 <div class="col-sm-12 col-md-3">
-                    <label for="usr">Email Address</label>
-                    <input type="text" class="form-control" id="email" name="mailEmail">
+                    <label>Email Address
+                    <input type="text" class="form-control" id="email" name="mailEmail"></label>
                 </div>
                 <div class="col-md-9"></div>
             </div>

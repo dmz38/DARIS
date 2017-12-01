@@ -1,10 +1,10 @@
 <div id="header"  style="background-color: #07294D">
     <div class="vertical-align">
         <div class="visible-xs col-xs-3">
-            <img id="MarioLogo" class="img-responsive pull-left" src="/img/mario.svg" onclick="window.location='/home'">
+            <img id="MarioLogo" class="img-responsive pull-left" src="/img/mario.svg" onclick="window.location='/home'" alt="A.J. Drexel Autism Institute">
         </div>
         <div class="col-sm-3 text-center">
-            <img id="AJDrexelLogo" class="img-responsive" src="/img/ajlogo-clear.svg" onclick="window.location='/home'">
+            <img id="AJDrexelLogo" class="img-responsive" src="/img/ajlogo-clear.svg" onclick="window.location='/home'" alt="A.J. Drexel Autism Institute">
         </div>
         <div class="visible-xs col-xs-6 text-center">
             <h2>DARIS</h2>

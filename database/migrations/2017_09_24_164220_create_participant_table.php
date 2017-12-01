@@ -18,6 +18,7 @@ class CreateParticipantTable extends Migration
             $table->string('fName');
             $table->string('lName');
             $table->boolean('diagnosed');
+            $table->boolean('suspected')->nullable($value = true);
             $table->date('dob');
             $table->string('gender');
             $table->string('race');

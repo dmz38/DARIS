@@ -1,13 +1,12 @@
-<html>
+<!DOCTYPE html>
 @include("parts.head")
 <body>
 @include("parts.nav")
-<form id="registerForm">
+{{--<form id="registerForm">--}}
 <div class="container-fluid">
     <div class="col-xs-12 col-lg-push-1 col-lg-10">
         <h2>Register</h2>
         <div id="surveyWrap">
-            <input type="hidden" name="_token" value="{{ Session::token() }}">
             <div id="part1" class="surveySection">
                 @include("parts.register.part1")
             </div>
@@ -25,6 +24,7 @@
             </div>
             <div class="clearfix"></div>
             <div id="part4" class="surveySection">
+                <input type="hidden" name="_token" value="{{ Session::token() }}">
                 @include("parts.register.part4")
             </div>
             <div class="clearfix"></div>
@@ -50,12 +50,19 @@
         @include("parts.register.form.childTemplate")
     </template>
 </div>
-</form>
-</body>
+{{--</form>--}}
 <script>
     //$(function () {
     //  $('[data-toggle="tooltip"]').tooltip()
     //});
+
+    $.ajaxSetup(
+        {
+            headers:
+                {
+                    'X-CSRF-Token': $('input[name="_token"]').val()
+                }
+        });
 
     var childCount = 1;
 
@@ -141,7 +148,23 @@
 
     $("#part4Next").on("click", function () {
         $("#part4").hide();
-        $("#part5").fadeIn();
+        if(selfID === 1) {
+            $("#part5").fadeIn();
+        } else {
+            var children = [];
+            $(".childSection").each(function() {
+                console.log(this);
+                children.push($(this).serializeArray());
+            });
+            var guardian = $("#mainInfo").serializeArray();
+            $("#mailingList, #nominate").html("");
+            console.log(children);
+            console.log(guardian);
+            $.post("/ajax/register", {"guardian": guardian, "children": children, "Nomination":"parent"}, function(data){
+                console.log(data);
+                $("#submit").fadeIn();
+            }, "json");
+        }
     });
 
     $("#part5Next").on("click", function () {
@@ -221,7 +244,7 @@
     });
 
     $('body').on("change", ".gender",  function () {
-        if ((this).val() == "other") {
+        if ($(this).val() == "other") {
             $(this).closest(".otherGender").fadeIn();
         } else {
             $(this).closest(".otherGender").hide();
@@ -272,4 +295,5 @@
         return returnArray;
     }
 </script>
+</body>
 </html>

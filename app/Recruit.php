@@ -9,6 +9,7 @@
 namespace App;
 use DB;
 use Illuminate\Support\Facades\App;
+use phpDocumentor\Reflection\DocBlock\Tags\Param;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
@@ -110,7 +111,51 @@ class Recruit extends App
                     $input['previous'], $contactId] );
 
         } else {
+            $familyId = 0;
+            $contactId = 0;
+            if(isset($input['guardian'])) {
+                $values = array_column($input['guardian'], "value", "name");
+                $familyId = DB::table("Family")->insertGetId(["familyName" => $values['lName']]);
+                if($familyId != 0) {
+                    $columnNamesContact = array(
+                        "address",
+                        "address2",
+                        "city",
+                        "state",
+                        "zip",
+                        "phoneType",
+                        "phoneNumber",
+                        "carrier",
+                        "email",
+                        "emailPermission",
+                        "emailPref",
+                        "mailPermission",
+                        "mailPref",
+                        "voicemailPermission",
+                        "phonePref"
+                    );
+                    $datasetContact = Recruit::sub_array($values, $columnNamesContact);
+                    $contactId = DB::table('Contact')->insertGetId($datasetContact,'contactId');
 
+                    DB::table('Guardian')->insert(["fName"=>$values['fName'], "lName"=>$values['lName'],
+                        "contactId" => $contactId, "familyId" => $familyId]);
+                }
+            } else {
+                DB::rollback();
+                return false;
+            }
+            if(isset($input['children']) && $familyId != 0 && $contactId != 0) {
+                foreach($input['children'] as $child) {
+                    $values = array_column($child, "value", "name");
+                    $values['familyId'] = $familyId;
+                    unset($values['otherGender']);
+                    $values['contactId'] = $contactId;
+                    DB::table('Participant')->insert($values);
+                }
+            } else {
+                DB::rollback();
+                return false;
+            }
         }
 
         DB::commit();

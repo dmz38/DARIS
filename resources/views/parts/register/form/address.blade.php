@@ -1,9 +1,9 @@
 <div>
     <div class="row">
         <div class="col-md-6">
-            <label for="address1">Address:</label>
-            <input type="text" class="form-control" id="address1" name="address" placeholder="Address line 1"><br>
-            <input type="text" class="form-control" id="address2" name="address2" placeholder="Address line 2"><br>
+            <label class="form-group">Address:</label>
+            <input type="text" class="form-control" name="address" placeholder="Address line 1"><br>
+            <input type="text" class="form-control" name="address2" placeholder="Address line 2"><br>
         </div>
         <div class="col-md-6"></div>
     </div>
@@ -15,8 +15,8 @@
             <br>
         </div>
         <div class="col-md-2">
-            <select class="form-control" id="stateGuardian" name="state" required>
-                <option selected disabled>State</option>
+            <select class="form-control" name="state" required>
+                <option value="" selected disabled>State</option>
                 <option value="AL">AL</option>
                 <option value="AK">AK</option>
                 <option value="AZ">AZ</option>
@@ -85,11 +85,11 @@
         <h5>
             Can we mail you more information?
             <span class="pull-right">
-                <label class="radio-inline" for="yesMAIL">
-                    <input type="radio" name="mailPermission" id="yesMAIL" value="1">Yes
+                <label class="radio-inline">
+                    <input type="radio" name="mailPermission" value="1">Yes
                 </label>
-                <label class="radio-inline" for="noMAIL">
-                    <input type="radio" name="mailPermission" id="noMAIL" value="0">No
+                <label class="radio-inline">
+                    <input type="radio" name="mailPermission" value="0">No
                 </label>
             </span>
         </h5>

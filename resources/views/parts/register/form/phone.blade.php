@@ -1,13 +1,13 @@
 <div class="row">
     <div class="col-md-3">
-        <label for="cell">Phone #</label>
+        <label>Phone #</label>
         <input type="text" class="form-control" id="cell" name="phoneNumber" required>
     </div>
     <div class="visible-xs">
         <br>
     </div>
     <div class="col-md-4">
-        <label for="phoneType">Type</label>
+        <label>Type</label>
         <select class="form-control" name="phoneType" id="phoneType">
             <option>Select One</option>
             <option value="cell">Cell Phone</option>
@@ -19,7 +19,7 @@
         <br>
     </div>
     <div class="col-md-4">
-        <label for="carrier">Provider</label>
+        <label>Provider</label>
         <select class="form-control" name="carrier" id="carrier">
             <option>Select One</option>
             <option value="att">AT&T</option>
@@ -43,10 +43,10 @@
         <h5>
             Can we text you more information?
             <span class="pull-right">
-                <label class="radio-inline" for="yestext">
+                <label class="radio-inline">
                     <input type="radio" name="textPermission" id="yestext" value="1">Yes
                 </label>
-				<label class="radio-inline" for="notext">
+				<label class="radio-inline">
 				    <input type="radio" name="textPermission" id="notext" value="0">No
                 </label>
             </span>
@@ -56,11 +56,11 @@
         <h5>
             Can we leave you a voicemail?
             <span class="pull-right">
-			    <label class="radio-inline" for="yesvoice">
-				    <input type="radio" name="voicemailPermission" id="yesvoice" value="1">Yes
+			    <label class="radio-inline">
+				    <input type="radio" name="voicemailPermission" value="1">Yes
                 </label>
-				<label class="radio-inline" for="novoice">
-				    <input type="radio" name="voicemailPermission" id="novoice" value="0">No
+				<label class="radio-inline">
+				    <input type="radio" name="voicemailPermission" value="0">No
                 </label>
             </span>
         </h5>
@@ -69,11 +69,11 @@
         <h5>
             Is this your preferred method of contact?
             <span class="pull-right">
-                <label class="radio-inline" for="yescontact">
-                    <input type="radio" name="phonePref" id="yescontact" value="1">Yes
+                <label class="radio-inline">
+                    <input type="radio" name="phonePref" value="1">Yes
                 </label>
-                <label class="radio-inline" for="nocontact">
-                    <input type="radio" name="phonePref" id="nocontact" value="0">No
+                <label class="radio-inline">
+                    <input type="radio" name="phonePref" value="0">No
                 </label>
             </span>
         </h5>

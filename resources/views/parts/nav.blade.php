@@ -1,7 +1,7 @@
 <div id="header"  style="background-color: #07294D">
     <div class="vertical-align">
         <div class="col-xs-6 col-sm-3 text-center">
-            <img id="AJDrexelLogo" class="img-responsive" src="/img/ajlogo-clear.svg">
+            <img id="AJDrexelLogo" class="img-responsive" src="/img/ajlogo-clear.svg" alt="A.J. Drexel Autism Institute">
         </div>
         <div class="visible-xs col-xs-6 text-center" style="color: white">
             <h2>DARIS</h2>

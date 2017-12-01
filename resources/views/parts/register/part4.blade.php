@@ -5,25 +5,26 @@
 
     <div class="row">
         <h3><b><span class="guardianText">Guardian (</span>Yourself<span class="guardianText">)</span></b></h3>
-        <b>
-            <hr>
-        </b>
-        @include("parts.register.form.name")
-        <br>
-        <br>
+        <hr>
+        <form id="mainInfo">
+        <div id="primaryInfo">
+            @include("parts.register.form.name")
+            <br>
+            <br>
 
-        @include("parts.register.form.address")
-        <br>
+            @include("parts.register.form.address")
+            <br>
 
-        @include("parts.register.form.phone")
-        <br>
+            @include("parts.register.form.phone")
+            <br>
 
-        @include("parts.register.form.email")
-        <br>
+            @include("parts.register.form.email")
+            <br>
 
-        @include("parts.register.form.demographic")
-        <br>
-
+            @include("parts.register.form.demographic")
+            <br>
+        </div>
+        </form>
         <div id="childData">
             @include("parts.register.form.childTemplate");
         </div>
