@@ -37,7 +37,7 @@
             <div class="col-md-3">&nbsp;</div>
             <div class="col-md-4 otherDiagnosis">
                 <label>Other Diagnosis
-                <select name="singleDiagnosis" class="form-control otherDiagnosis">
+                <select name="diagnosis" class="form-control otherDiagnosis">
                     <option value="" selected disabled>Select a Diagnosis</option>
                     <option>None</option>
                     <option>Disease 1</option>

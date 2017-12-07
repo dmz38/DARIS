@@ -1,5 +1,6 @@
 <div class="col-xs-1">&nbsp;</div>
 <div class="col-xs-10">
+    <form id="studyHistory">
     <div class="text-center">Step 5
         <br><br>
         <div id="firstStudy">
@@ -21,5 +22,6 @@
             <button id="part5Next" class="btn btn-primary target pull-right" type="button">NEXT</button>
         </div>
     </div>
+    </form>
 </div>
 <div class="col-xs-1">&nbsp;</div>

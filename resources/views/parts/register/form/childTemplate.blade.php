@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="guardianText">
-        <button class="addMore btn btn-default">Add more children</button>
+        <input type="button" class="addMore btn btn-default" value="Add more children">
     </div>
 </div>
 </form>

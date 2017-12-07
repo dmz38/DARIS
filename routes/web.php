@@ -42,12 +42,9 @@ Route::get('recruit/summary', function () {
 });
 
 Route::post('ajax/register', function() {
-    //Recruit::parseData($_POST);
     return Recruit::parseData($_POST);
-    //return json_encode($_POST);
-    //return "IT GOT HERE!";
 });
 
 Route::get("test", function(){
-    return phpinfo();
+    return view('show_tables');
 });

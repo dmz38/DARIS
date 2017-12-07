@@ -55,6 +55,8 @@ class Recruit extends App
         if($input['Nomination'] == "self") {
             // no family needed for an individual
 
+            $values = array_column($input['info'], "value", "name");
+
             // Create Contact row
             $columnNamesContact = array(
                 "address",
@@ -73,7 +75,7 @@ class Recruit extends App
                 "voicemailPermission",
                 "phonePref"
                 );
-            $datasetContact = Recruit::sub_array($input, $columnNamesContact);
+            $datasetContact = Recruit::sub_array($values, $columnNamesContact);
             $contactId = DB::table('Contact')->insertGetId($datasetContact,'contactId');
 
             // Create Participant row
@@ -89,10 +91,10 @@ class Recruit extends App
                 "previous"
             );
             //$datasetContact = Recruit::sub_array($input, $columnNamesParticipant);
-            $datasetContact["contactId"] = $contactId;
+            //$datasetContact["contactId"] = $contactId;
 
-            $dob = strtotime($input['dob']);
-            $input['dob'] = date('Y-m-d', $dob);
+            //$dob = strtotime($values['dob']);
+            //$values['dob'] = date('Y-m-d', $dob);
 
             DB::insert("INSERT INTO Participant 
               (fName,
@@ -106,9 +108,9 @@ class Recruit extends App
                 contactId)
                 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                [$input['fName'], $input['lName'], $input['Diagnosed'], $input['dob'],
-                    $input['gender'], $input['race'], $input['ethnicity'],
-                    $input['previous'], $contactId] );
+                [$values['fName'], $values['lName'], $values['Diagnosed'], $values['dob'],
+                    $values['gender'], $values['race'], $values['ethnicity'],
+                    $values['previous'], $contactId] );
 
         } else {
             $familyId = 0;

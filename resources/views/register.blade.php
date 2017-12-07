@@ -158,8 +158,6 @@
             });
             var guardian = $("#mainInfo").serializeArray();
             $("#mailingList, #nominate").html("");
-            console.log(children);
-            console.log(guardian);
             $.post("/ajax/register", {"guardian": guardian, "children": children, "Nomination":"parent"}, function(data){
                 console.log(data);
                 $("#submit").fadeIn();
@@ -168,15 +166,22 @@
     });
 
     $("#part5Next").on("click", function () {
-        $("#mailingList, #nominate").html("");
+        $("#mailingList, #nominate, .guardianText").html("");
         //console.log($("#registerForm").serializeArray());
         //var formData = objectifyForm($("#registerForm").serializeArray());
 
-        $.post("/ajax/register", $("#registerForm").serializeArray(), function(data){
+        var info = $("#mainInfo").serializeArray();
+        var diagInfo = $("#singleUser").serializeArray();
+        var studyHistory = $("#studyHistory").serializeArray();
+
+        $.merge(info, diagInfo);
+        $.merge(info, studyHistory);
+
+        console.log(info);
+
+        $.post("/ajax/register", { "Nomination":"self", info: info }, function(data){
             console.log(data);
         }, "json");
-
-        //console.log(formData);
 
         $("#part5").hide();
         $("#part6").fadeIn();
