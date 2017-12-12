@@ -50,7 +50,7 @@
             <div id="afterDiagnosis"></div>
             <div class="col-md-2">
                 <label>&nbsp;
-                <button class="form-control btn btn-default addMoreDiag">Add another diagnosis</button></label>
+                <button class="form-control btn btn-default"  name="addMoreDiag">Add another diagnosis</button></label>
             </div>
             <!--
             <div id="options" class="row">

@@ -148,6 +148,7 @@
 
     $("#part4Next").on("click", function () {
         $("#part4").hide();
+        $("div[name='otheGender']").hide();
         if(selfID === 1) {
             $("#part5").fadeIn();
         } else {
@@ -223,22 +224,38 @@
         }
     });
 
-    $('.addMoreDiag').on("click", function () {
-        $("#afterDiagnosis").append($("#options").html() + "<br>");
+    $("button[name='addMoreDiag']").on("click", function () {
+        $("#afterDiagnosis").append($("select[name='diagnosis']").html() + "<br>");
     });
 
     $('.addMoreDiagnosis').on("click", function () {
         $("#afterOtherDiagnosis").append('<div class="col-md-12" style="margin-left:0px;">'+ $("#otherDiagnosisGuardian").html() + "</div><br>");
     });
 
-    $('#genderYou').on("change", function () {
-        if ($("#genderYou").val() == "gender3") {
-            $("#otherGenderYou").fadeIn();
+    // this doesnt work:
+    $("select[name='gender']").on("change", function () {
+        console.log("gender item changes");
+        if ($(this).val() == "other") {
+            console.log("gender is othher")
+            console.log($(this).closest(".otherGender"))
+            $(this).closest(".otherGender").fadeIn();
         }
-        if ($("#genderYou").val() != "gender3") {
-            $("#otherGenderYou").hide();
+        else {
+            $(this).closest(".otherGender").hide();
         }
     });
+
+    // This code worked:
+    // $("select[name='gender']").on("change", function () {
+    //     console.log("gender item changes");
+    //     if ($(this).val() == "other") {
+    //         console.log("gender is othher")
+    //         $("div[name='otherGender']").fadeIn();
+    //     }
+    //     else {
+    //         $("div[name='otherGender']").hide();
+    //     }
+    // });
 
     $("#singleDiagnosis").on("change", function(){
         if ($(this).val() == "diag_oth") {
@@ -248,13 +265,15 @@
         }
     });
 
-    $('body').on("change", ".gender",  function () {
-        if ($(this).val() == "other") {
-            $(this).closest(".otherGender").fadeIn();
-        } else {
-            $(this).closest(".otherGender").hide();
-        }
-    });
+
+    // previous code that didnt work
+    // $('body').on("change", ".gender",  function () {
+    //     if ($(this).val() == "other") {
+    //         $(this).closest(".otherGender").fadeIn();
+    //     } else {
+    //         $(this).closest(".otherGender").hide();
+    //     }
+    // });
 
     $("body").on("click", ".addMore", function () {
         childCount++;

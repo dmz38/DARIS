@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-3">
         <label>Gender</label>
-        <select class="form-control gender" name="gender" required>
+        <select class="form-control" name="gender" required>
             <option value="" selected disabled>Select a Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -18,7 +18,7 @@
     <div class="visible-xs">
         <br>
     </div>
-    <div class="col-md-3 otherGender">
+    <div class="col-md-3 otherGender otherGender" name="otherGender">
         <label>Other Gender</label>
         <input type="text" class="form-control" name="otherGender" placeholder="Other Gender">
     </div>
