@@ -18,7 +18,7 @@
     <div class="visible-xs">
         <br>
     </div>
-    <div class="col-md-3 otherGender otherGender" name="otherGender">
+    <div class="col-md-3 otherGender">
         <label>Other Gender</label>
         <input type="text" class="form-control" name="otherGender" placeholder="Other Gender">
     </div>

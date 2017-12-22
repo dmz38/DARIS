@@ -160,7 +160,6 @@
             var guardian = $("#mainInfo").serializeArray();
             $("#mailingList, #nominate").html("");
             $.post("/ajax/register", {"guardian": guardian, "children": children, "Nomination":"parent"}, function(data){
-                console.log(data);
                 $("#submit").fadeIn();
             }, "json");
         }
@@ -168,8 +167,6 @@
 
     $("#part5Next").on("click", function () {
         $("#mailingList, #nominate, .guardianText").html("");
-        //console.log($("#registerForm").serializeArray());
-        //var formData = objectifyForm($("#registerForm").serializeArray());
 
         var info = $("#mainInfo").serializeArray();
         var diagInfo = $("#singleUser").serializeArray();
@@ -178,14 +175,10 @@
         $.merge(info, diagInfo);
         $.merge(info, studyHistory);
 
-        console.log(info);
-
         $.post("/ajax/register", { "Nomination":"self", info: info }, function(data){
-            console.log(data);
+            $("#part5").hide();
+            $("#part6").fadeIn();
         }, "json");
-
-        $("#part5").hide();
-        $("#part6").fadeIn();
     });
 
     $("#part5Next").on("click", function () {
@@ -205,13 +198,15 @@
 
     // all back logic
 
-    $('#no1, #yes1').click(function () {
-        if ($('#no1').is(':checked')) {
+    $('#diagnosedYes, #diagnosedNo').click(function () {
+        if ($('#diagnosedNo').is(':checked')) {
             $("#suspected").show();
         }
         else {
             $("#suspected").hide();
         };
+
+        $("#suspected input:radio").prop('checked', false);
     });
 
     //added the fade in/out of the other diagnosis text box
@@ -232,30 +227,14 @@
         $("#afterOtherDiagnosis").append('<div class="col-md-12" style="margin-left:0px;">'+ $("#otherDiagnosisGuardian").html() + "</div><br>");
     });
 
-    // this doesnt work:
     $("select[name='gender']").on("change", function () {
-        console.log("gender item changes");
         if ($(this).val() == "other") {
-            console.log("gender is othher")
-            console.log($(this).closest(".otherGender"))
-            $(this).closest(".otherGender").fadeIn();
+            $(this).closest("form").find(".otherGender").fadeIn();
         }
         else {
-            $(this).closest(".otherGender").hide();
+            $(this).closest("form").find(".otherGender").fadeOut();
         }
     });
-
-    // This code worked:
-    // $("select[name='gender']").on("change", function () {
-    //     console.log("gender item changes");
-    //     if ($(this).val() == "other") {
-    //         console.log("gender is othher")
-    //         $("div[name='otherGender']").fadeIn();
-    //     }
-    //     else {
-    //         $("div[name='otherGender']").hide();
-    //     }
-    // });
 
     $("#singleDiagnosis").on("change", function(){
         if ($(this).val() == "diag_oth") {
@@ -264,16 +243,6 @@
             $("#otherDiagInput").fadeOut();
         }
     });
-
-
-    // previous code that didnt work
-    // $('body').on("change", ".gender",  function () {
-    //     if ($(this).val() == "other") {
-    //         $(this).closest(".otherGender").fadeIn();
-    //     } else {
-    //         $(this).closest(".otherGender").hide();
-    //     }
-    // });
 
     $("body").on("click", ".addMore", function () {
         childCount++;

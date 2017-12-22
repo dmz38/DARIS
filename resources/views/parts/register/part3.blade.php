@@ -11,10 +11,10 @@
                     Diagnosed with ASD:
                 </div>
                 <div class="col-xs-6 text-left">
-                    <div class="col-xs-3" id="radioDiagnosed">
+                    <div class="col-xs-2" id="radioDiagnosed">
                         <label><input type="radio" name="Diagnosed" id="diagnosedYes" value="1"/>Yes</label>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <label><input type="radio" name="Diagnosed" id="diagnosedNo" value="0"/> No</label>
                     </div>
                 </div>
@@ -25,17 +25,18 @@
                     Suspected with ASD:
                 </div>
                 <div class="col-xs-6 text-left">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <label><input type="radio" name="Suspected" id="suspectedYes" value="1"/> Yes</label>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <label><input type="radio" name="Suspected" id="suspectedNo" value="0"/> No</label>
                     </div>
                 </div>
                 <br>
+                <br>
             </div>
             <div class="col-md-3">&nbsp;</div>
-            <div class="col-md-4 otherDiagnosis">
+            <div class="col-md-4 diagnosis">
                 <label>Other Diagnosis
                 <select name="diagnosis" class="form-control otherDiagnosis">
                     <option value="" selected disabled>Select a Diagnosis</option>
