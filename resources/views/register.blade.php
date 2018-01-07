@@ -152,6 +152,7 @@
         if(selfID === 1) {
             $("#part5").fadeIn();
         } else {
+            // $("#part6").fadeIn();
             var children = [];
             $(".childSection").each(function() {
                 console.log(this);
@@ -159,9 +160,12 @@
             });
             var guardian = $("#mainInfo").serializeArray();
             $("#mailingList, #nominate").html("");
+            // console.log("reached part 5 next stage")
+            //Looks like what didnt work was that since the fadIn was inside the fuction inside post.
+            //The function never ran, so i put it outside of the post.
             $.post("/ajax/register", {"guardian": guardian, "children": children, "Nomination":"parent"}, function(data){
-                $("#submit").fadeIn();
             }, "json");
+            $("#submit").fadeIn();
         }
     });
 
