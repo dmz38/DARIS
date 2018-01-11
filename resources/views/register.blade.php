@@ -223,13 +223,14 @@
         }
     });
 
-    $("button[name='addMoreDiag']").on("click", function () {
-        $("#afterDiagnosis").append($("select[name='diagnosis']").html() + "<br>");
+    $("button[name='addDiag']").on("click", function () {
+        console.log("addDiag is initiated")
+        $(this).closest("form").find(".afterDiag").append('<div class="row" name="diagnosis">' + $("div[name='diagnosis']").html() + '</div> <br>');
     });
 
-    $('.addMoreDiagnosis').on("click", function () {
-        $("#afterOtherDiagnosis").append('<div class="col-md-12" style="margin-left:0px;">'+ $("#otherDiagnosisGuardian").html() + "</div><br>");
-    });
+    // $('.addMoreDiagnosis').on("click", function () {
+    //     $("#afterOtherDiagnosis").append('<div class="col-md-12" style="margin-left:0px;">'+ $("#otherDiagnosisGuardian").html() + "</div><br>");
+    // });
 
     $("select[name='gender']").on("change", function () {
         if ($(this).val() == "other") {
@@ -240,13 +241,13 @@
         }
     });
 
-    $("#singleDiagnosis").on("change", function(){
-        if ($(this).val() == "diag_oth") {
-            $("#otherDiagInput").fadeIn();
-        } else {
-            $("#otherDiagInput").fadeOut();
-        }
-    });
+    // $("#singleDiagnosis").on("change", function(){
+    //     if ($(this).val() == "diag_oth") {
+    //         $("#otherDiagInput").fadeIn();
+    //     } else {
+    //         $("#otherDiagInput").fadeOut();
+    //     }
+    // });
 
     $("body").on("click", ".addMore", function () {
         childCount++;

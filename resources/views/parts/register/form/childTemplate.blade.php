@@ -17,44 +17,57 @@
         <br><br>
 
         <div class="pastReview row">
-            <div class="col-md-6">
-                <h5>My Child is diagnosed with ASD
-                    <span class="pull-right">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="diagnosed" class="diagnosedASDY" value="1"> Yes
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="diagnosed" class="diagnosedASDN" value="0"> No
-                                    </label>
-                                </span>
-                </h5>
-            </div>
-            <div class="col-md-6">
-                <h5>I think my child might have ASD
-                    <span class="pull-right">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="suspected" class="suspectedASDY" value="1"> Yes
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="suspected" class="suspectedASDN" value="0"> No
-                                    </label>
-                                </span>
-                </h5>
+            <div name="ASDYN">
+                <div class="col-md-6">
+                    <h5>My child is diagnosed with ASD
+                        <span class="pull-right">
+                            <label class="radio-inline">
+                                <input type="radio" name="diagnosed" class="diagnosedASDY" value="1"> Yes
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="diagnosed" class="diagnosedASDN" value="0"> No
+                            </label>
+                        </span>
+                    </h5>
+                </div>
+                <div class="col-md-6">
+                    <h5>I think my child might have ASD
+                        <span class="pull-right">
+                            <label class="radio-inline">
+                                <input type="radio" name="suspected" class="suspectedASDY" value="1"> Yes
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="suspected" class="suspectedASDN" value="0"> No
+                            </label>
+                        </span>
+                    </h5>
+                </div>
             </div>
             <br>
-            <div class="col-md-4 otherDiagnosis">
-                <label>Other Diagnosis</label>
-                <select class="form-control otherDiagnosis" name="diagnosis">
-                    <option value="" selected disabled>Select a Diagnosis</option>
-                    <option>None</option>
-                    <option>Disease 1</option>
-                    <option>Disease 2</option>
-                    <option>Disease 3</option>
-                </select>
+            <h4 class="center">Other Diagnosis</h4>
+            <div class="row" name="diagnosis">
+                <div class="col-md-4 hiddenn-xs">&nbsp;</div>
+                <div class="col-md-4 diagnosis">
+                    <select class="form-control otherDiagnosis">
+                        <option value="" selected disabled>Select a Diagnosis</option>
+                        <option>None</option>
+                        <option>Disease 1</option>
+                        <option>Disease 2</option>
+                        <option>Disease 3</option>
+                        <option value=“diag_oth”>Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4 hiddenn-xs">&nbsp;</div>
             </div>
-            <div class="hidden-xs afterOtherDiagnosis"></div>
-            <div class="col-md-2">
-                <button class="form-control btn btn-default diagnosis">Add another diagnosis</button>
+            <br>
+            <div class="hidden-xs afterDiag"></div>
+            {{--<div id="afterDiagnosis"></div>--}}
+            <div class="row">
+                <div class="col-md-4 hiddenn-xs">&nbsp;</div>
+                <div class="col-md-4 center">
+                        <button type="button" class="btn btn-default" name="addDiag">Add another diagnosis</button>
+                </div>
+                <div class="col-md-4 hiddenn-xs">&nbsp;</div>
             </div>
         </div>
         <br>
