@@ -82,17 +82,26 @@
 
 <div class="row">
     <div class="col-md-6">
-        <h5>
-            Can we mail you more information?
-            <span class="pull-right">
-                <label class="radio-inline">
-                    <input type="radio" name="mailPermission" value="1">Yes
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="mailPermission" value="0">No
-                </label>
-            </span>
-        </h5>
+        Can we mail you more information?
+        <span class="pull-right">
+            <label class="radio-inline">
+                <input type="radio" name="mailPermission" value="1">Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="mailPermission" value="0">No
+            </label>
+        </span>
+    </div>
+    <div class="col-md-6">
+        Is this your preferred method of contact?
+        <span class="pull-right">
+            <label class="radio-inline">
+                <input type="radio" name="mailPref" value="1">Yes
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="mailPref" value="0">No
+            </label>
+        </span>
     </div>
     <div class="col-md-6"></div>
 </div>

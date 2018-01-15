@@ -17,39 +17,7 @@ ini_set('display_errors', 'on');
 class Recruit extends App
 {
     public static function parseData($input){
-        /*
-         * suggestCheck: "on",
-         * Nomination: "self",
-         * Diagnosed: "1",
-         * singleDiagnosis: "None",
-         * otherDiagInput: "",
-         * Diagnosed:"1"
-         * Nomination : "self"
-         * address1 :  "148 Forest Trail Drive"
-         * address2 : ""
-         * city : "Lansdale"
-         * email : ""
-         * emailPermission : "1"
-         * emailPref : "0"
-         * fName : "Dan"
-         * lName : "Ziegler"
-         * mailPermission : "1"
-         * otherDiagInput : ""
-         * otherGender : ""
-         * phoneNumber : "2153532531"
-         * phonePref : "1"
-         * phoneType : "cell"
-         * previous : "on"
-         * singleDiagnosis : "None"
-         * state : "“PA”"
-         * suggestCheck : "on"
-         * textPermission : "1"
-         * voicemailPermission : "1"
-         * zip : "19446"
-         */
 
-        // TODO: Remove before hitting production
-        //DB::connection()->enableQueryLog();
         DB::beginTransaction();
         // if single person
         if($input['Nomination'] == "self") {
@@ -73,7 +41,8 @@ class Recruit extends App
                 "mailPermission",
                 "mailPref",
                 "voicemailPermission",
-                "phonePref"
+                "phonePref",
+                "textPermission"
                 );
             $datasetContact = Recruit::sub_array($values, $columnNamesContact);
             $contactId = DB::table('Contact')->insertGetId($datasetContact,'contactId');
@@ -90,11 +59,6 @@ class Recruit extends App
                 "diagnosis",
                 "previous"
             );
-            //$datasetContact = Recruit::sub_array($input, $columnNamesParticipant);
-            //$datasetContact["contactId"] = $contactId;
-
-            //$dob = strtotime($values['dob']);
-            //$values['dob'] = date('Y-m-d', $dob);
 
             DB::insert("INSERT INTO Participant 
               (fName,
@@ -134,7 +98,8 @@ class Recruit extends App
                         "mailPermission",
                         "mailPref",
                         "voicemailPermission",
-                        "phonePref"
+                        "phonePref",
+                        "textPermission"
                     );
                     $datasetContact = Recruit::sub_array($values, $columnNamesContact);
                     $contactId = DB::table('Contact')->insertGetId($datasetContact,'contactId');
@@ -161,8 +126,6 @@ class Recruit extends App
         }
 
         DB::commit();
-
-        //return DB::getQueryLog();
     }
 
     public static function sub_array(array $haystack, array $needle)
