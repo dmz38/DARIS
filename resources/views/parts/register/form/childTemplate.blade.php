@@ -44,7 +44,7 @@
                 </div>
             </div>
             <br>
-            <h4 class="center">Other Diagnosis</h4>
+            <h4 class="center" style="margin-left: 15px;">Other Diagnosis</h4>
             <div class="row" name="diagnosis">
                 <div class="col-md-4 hiddenn-xs">&nbsp;</div>
                 <div class="col-md-4 diagnosis">
