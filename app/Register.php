@@ -14,7 +14,7 @@ use phpDocumentor\Reflection\DocBlock\Tags\Param;
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
-class Recruit extends App
+class Register extends App
 {
     public static function parseData($input){
 
@@ -44,7 +44,7 @@ class Recruit extends App
                 "phonePref",
                 "textPermission"
                 );
-            $datasetContact = Recruit::sub_array($values, $columnNamesContact);
+            $datasetContact = Register::sub_array($values, $columnNamesContact);
             $contactId = DB::table('Contact')->insertGetId($datasetContact,'contactId');
 
             // Create Participant row
@@ -101,7 +101,7 @@ class Recruit extends App
                         "phonePref",
                         "textPermission"
                     );
-                    $datasetContact = Recruit::sub_array($values, $columnNamesContact);
+                    $datasetContact = Register::sub_array($values, $columnNamesContact);
                     $contactId = DB::table('Contact')->insertGetId($datasetContact,'contactId');
 
                     DB::table('Guardian')->insert(["fName"=>$values['fName'], "lName"=>$values['lName'],

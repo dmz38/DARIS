@@ -11,7 +11,7 @@
 |
 */
 
-use App\Recruit;
+use App\Register;
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,7 +42,7 @@ Route::get('recruit/summary', function () {
 });
 
 Route::post('ajax/register', function() {
-    return Recruit::parseData($_POST);
+    return Register::parseData($_POST);
 });
 
 Route::get("test", function(){
